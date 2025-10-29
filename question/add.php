@@ -38,14 +38,14 @@ if (!$quiz) {
         <h5 class="mb-3">گزینه‌ها <small class="text-muted">(حداقل ۲ مورد انتخاب شود، اولین گزینه = درست)</small></h5>
 
         <div id="optionsContainer" class="mb-3">
-            <?php for ($i = 0; $i < 4; $i++): ?>
+            <?php for ($i = 0; $i < 4; $i++){ ?>
             <div class="input-group mb-3 option-row">
                 <span class="input-group-text fw-bold int-add"><?= $i + 1 ?></span>
                 <input type="text" name="options[]" class="form-control" 
                        placeholder="متن گزینه <?= $i + 1 ?>" value="<?= old("options.$i") ?>">
                 <button type="button" class="btn btn-outline-danger remove-option buttom-delete" <?= $i < 2 ? 'disabled' : '' ?>>حذف</button>
             </div>
-            <?php endfor; ?>
+            <?php } ?>
         </div>
 
         <button type="button" class="btn btn-outline-secondary btn-pill mb-4" id="addOption">+ افزودن گزینه</button>

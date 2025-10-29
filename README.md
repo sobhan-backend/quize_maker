@@ -24,7 +24,10 @@
 - Apache / Nginx
 - [Composer](https://getcomposer.org/) **(اجباری برای تولید PDF)**
 
+## **فایل های db.php و helper.php تنظیم کنید.**
+
 > **حتماً پس از کلون کردن پروژه، دستور زیر را اجرا کنید:**
 
 ```bash
 composer install
+composer require mpdf/mpdf

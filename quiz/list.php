@@ -12,7 +12,7 @@
                              ORDER BY q.created_at DESC");
         $quizzes = $stmt->fetchAll();
         ?>
-        <?php foreach ($quizzes as $quiz): ?>
+        <?php foreach ($quizzes as $quiz){ ?>
         <div class="col-md-6 col-lg-4">
             <div class="card-quiet p-4 h-100 d-flex flex-column">
                 <!-- عنوان و تعداد سوال -->
@@ -28,12 +28,12 @@
 
                 <!-- دکمه‌های اصلی (راست) -->
                 <div class="d-flex gap-2 mb-3">
-                    <?php if ($quiz['question_count'] > 0): ?>
-                    <a href="<?= url("take/start.php?quiz_id={$quiz['id']}") ?>" 
+                    <?php if ($quiz['question_count'] > 0){ ?>
+                    <a href="<?= url("app/start.php?quiz_id={$quiz['id']}") ?>" 
                        class="btn btn-success btn-sm btn-pill flex-grow-1" title="شروع آزمون">
                         <i class="bi bi-play"></i> شروع
                     </a>
-                    <?php endif; ?>
+                    <?php } ?>
                     <a href="<?= url("question/add.php?quiz_id={$quiz['id']}") ?>" 
                        class="btn btn-outline-primary btn-sm btn-pill flex-grow-1" title="افزودن سوال">
                         <i class="bi bi-plus-lg"></i> سوال
@@ -57,17 +57,17 @@
                 </div>
             </div>
         </div>
-        <?php endforeach; ?>
+        <?php } ?>
     </div>
 
     <!-- اگر آزمونی وجود نداشت -->
-    <?php if (empty($quizzes)): ?>
+    <?php if (empty($quizzes)){ ?>
     <div class="text-center py-5">
         <i class="bi bi-inbox display-1 text-muted"></i>
         <p class="mt-3 text-muted">هنوز آزمونی ایجاد نشده.</p>
         <a href="<?= url('quiz/create.php') ?>" class="btn btn-primary btn-pill px-5">ساخت اولین آزمون</a>
     </div>
-    <?php endif; ?>
+    <?php } ?>
 </div>
 
 <?php require '../function/footer.php'; ?>

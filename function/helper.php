@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', 'http://localhost:8000/');
+define('BASE_URL', 'http://localhost/quize_maker-main');
 
 function assets($file) {
     return rtrim(BASE_URL, '/') . '/assets/' . ltrim($file, '/');

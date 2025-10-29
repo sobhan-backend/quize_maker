@@ -69,13 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <hr>
     <h5>گزینه‌ها (اولین گزینه = درست)</h5>
     <div id="optionsContainer">
-        <?php foreach ($options as $i => $opt): ?>
+        <?php foreach ($options as $i => $opt){ ?>
         <div class="input-group mb-2">
             <span class="input-group-text"><?= $i + 1 ?></span>
             <input type="text" name="options[]" class="form-control" value="<?= htmlspecialchars($opt['option_text']) ?>">
             <button type="button" class="btn btn-outline-danger remove-option">حذف</button>
         </div>
-        <?php endforeach; ?>
+        <?php } ?>
     </div>
     <button type="button" class="btn btn-outline-secondary" id="addOption">+ افزودن گزینه</button>
 
